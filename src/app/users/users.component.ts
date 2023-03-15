@@ -19,10 +19,8 @@ export class UsersComponent implements OnInit {
   ){}
   
   showUser(){
-    const id = this.activateRoute.snapshot.params['id']
-    this.router.navigate(['users-info/',id])
-    this.getAllUsers()
-    console.log(id)
+    // const id = this.activateRoute.snapshot.params['id']
+    // this.router.navigate(['users-info/',id])
 
   }
 
@@ -31,7 +29,6 @@ export class UsersComponent implements OnInit {
     this.usersService.getAllUsers().subscribe(res=>{
      this.users = res
      console.log(res)
-     console.log(this.users)
     })
   }
   ngOnInit(): void {

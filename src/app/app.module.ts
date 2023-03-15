@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { MainLayoutComponent } from './features/main-layout.component';
 import { MainLayoutModule } from './features/main-layout.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -17,11 +19,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
    
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     MainLayoutModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
