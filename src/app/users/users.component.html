@@ -1,16 +1,21 @@
-<ng-container *ngFor="let user of users">
-<div style="width:70%; margin-left: auto; margin-right: auto;">
-    <div class="container">
-        <div class="card" style="width:400px">
-          <img  class="card-img-top" [src]="user.profilePic" alt="Card image" style="width:100%">
-          <div class="card-body">
-            <h4 class="card-title">{{user.firstName}} {{user.lastName}}</h4>
-            <p class="card-text">{{user.description}}</p>
-            <a [routerLink]="['/user-info',user.id]" class="btn btn-primary">See Profile</a>
-          </div>
+
+    <ng-container *ngFor="let user of users">
+        <div class="container mt-5 mb-5 d-flex justify-content-center">
+    <div class="card rounded">
+        <div class=" d-block justify-content-center">
+            <div class="area1 p-3 py-5"> </div>
+            <div class="area2 p- text-center px-3">
+                <div class="image mr-3"> <img  [src]="user.profilePic" class="rounded-circle"
+                        width="100" />
+                    <h4 class=" name mt-3 ">{{user.firstName}} {{user.lastName}}</h4>
+                    <p class="information mt-3 text-justify"> {{user.description}}</p>
+                    
+                    <button class="btn btn-primary follow"  [routerLink]="['/user-info',user.id]" >See Profile</button>
+
+                </div>
+                <div> </div>
+            </div>
         </div>
-        <br>
-        
-      </div>
+    </div>
 </div>
 </ng-container>
