@@ -10,11 +10,11 @@ export class UserInfoComponent implements OnInit{
  constructor(
   private activate: ActivatedRoute
  ){}
- data = new Object()
+ data?:number
 
  ngOnInit(): void {
   console.log(this.activate.snapshot.params)
-   this.data = this.activate.snapshot.params
+   this.data = this.activate.snapshot.params['id']
  }
 }
 

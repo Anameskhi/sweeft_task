@@ -1,0 +1,36 @@
+{
+  "users":[
+      {
+          "id": 1,
+          "firstName": "ana 1",
+          "lastName": "Meskhi 1",
+          "profilePic": "picture 1",
+          "description": "this is first user 1"
+      },
+      {
+          "id": 2,
+          "firstName": "ana 2",
+          "lastName": "Meskhi 2",
+          "profilePic": "picture 2",
+          "description": "this is first user 2"
+      }
+  ],
+  "friends":[
+      {
+          "id": 1,
+          "userId": 1,
+          "firstName": "mirian 1",
+          "lastName": "khajishvili 1",
+          "profilePic": "picture 1",
+          "description": "this is friend user 1"
+      },
+      {
+          "id": 2,
+          "userId": 1,
+          "firstName": "mirian 2",
+          "lastName": "khajishvili 2",
+          "profilePic": "picture 2",
+          "description": "this is friend user 2"
+      }
+  ]
+}
