@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IFriend } from '../core/interfaces/friend.interface';
+import { UsersService } from '../core/services/users.service';
 
 @Component({
   selector: 'app-user-info',
@@ -8,13 +10,23 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserInfoComponent implements OnInit{
  constructor(
-  private activate: ActivatedRoute
+  private activate: ActivatedRoute,
+  private userService: UsersService
  ){}
- data?:number
+ userFriends?: IFriend[]
+ id?:number
 
  ngOnInit(): void {
-  // console.log(this.activate.snapshot.params)
-  //  this.data = this.activate.snapshot.params['id']
+  this.id = this.activate.snapshot.params['id']
+  this.getUsersFriends()
+  
+ }
+
+ getUsersFriends(){
+  this.userService.getAllFriends().subscribe( res => {
+    const userFriend = res.filter(user => user.userId == this.id)
+    this.userFriends = userFriend
+  })
  }
 }
 

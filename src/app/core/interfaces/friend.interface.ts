@@ -1,6 +1,6 @@
 export interface IFriend {
-    userId: number
     id: number;
+    userId: number
     firstName: string;
     lastName: string;
     profilePic: string;

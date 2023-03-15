@@ -18,7 +18,7 @@ const routes: Routes = [
         loadChildren: () => import('./users/users.module').then(m=> m.UsersModule)
       },
       {
-        path: 'users-info/:id',
+        path: 'user-info/:id',
         component: UserInfoComponent
       },
     ]

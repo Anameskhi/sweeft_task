@@ -15,7 +15,8 @@ import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserInfoComponent
    
   ],
   imports: [

@@ -1,83 +1,232 @@
 {
-  "users":[
-  
-
-{"id": 1, "firstName": "Terry", "lastName": "Medhurst", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."  },
-
-{"id": 2, "firstName": "Sheldon", "lastName": "Quigley", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
-
-{"id": 3, "firstName": "Terrill", "lastName": "Hills", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."  },
-
-{"id": 4, "firstName": "Miles", "lastName": "Cummerata","profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
-
-{"id": 5, "firstName": "Mavis", "lastName": "Schultz", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
- 
-{"id": 6, "firstName": "Alison", "lastName": "Reichert", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
-
-{"id": 7, "firstName": "Oleta", "lastName": "Abbott","profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."  },
-
-{"id": 8, "firstName": "Ewell", "lastName": "Mueller", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
-
-{"id": 9, "firstName": "Demetrius", "lastName": "Corkery", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
- 
-{"id": 10, "firstName": "Eleanora", "lastName": "Price", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
- 
-{"id": 11, "firstName": "Marcel", "lastName": "Jones", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
-
-{"id": 12, "firstName": "Assunta", "lastName": "Rath", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
-
-{"id": 13, "firstName": "Trace", "lastName": "Douglas", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
-
-{"id": 14, "firstName": "Enoch", "lastName": "Lynch", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
- 
-{"id": 15, "firstName": "Jeanne", "lastName": "Halvorson", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
- 
-{"id": 16, "firstName": "Trycia", "lastName": "Fadel", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
-
-{"id": 17, "firstName": "Bradford", "lastName": "Prohaska", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
-
-{"id": 18, "firstName": "Arely", "lastName": "Skiles", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
-
-{"id": 19, "firstName": "Gust", "lastName": "Purdy", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
-
-{"id": 20, "firstName": "Lenna", "lastName": "Renner", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
-
-{"id": 21, "firstName": "Doyle", "lastName": "Ernser", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
- 
-{"id": 22, "firstName": "Tressa", "lastName": "Weber", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
- 
-{"id": 23, "firstName": "Felicity", "lastName": "Reilly", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
- 
-{"id": 24, "firstName": "Jocelyn", "lastName": "Schuster", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
-
-{"id": 25, "firstName": "Edwina", "lastName": "Ernser", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
- 
-{"id": 26, "firstName": "Griffin", "lastName": "Braun", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
-
-{"id": 27, "firstName": "Piper", "lastName": "Schowalter", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
-
-{"id": 28, "firstName": "Kody", "lastName": "Terry", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
- 
-{"id": 29, "firstName": "Macy", "lastName": "Greenfelder", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." },
-
-{"id": 30, "firstName": "Maurine", "lastName": "Stracke", "profilePic": "https://robohash.org/hicveldicta.png", "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks." }
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Terry",
+      "lastName": "Medhurst",
+      "profilePic": "https://robohash.org/hicveldicta.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 2,
+      "firstName": "Sheldon",
+      "lastName": "Quigley",
+      "profilePic": "https://robohash.org/doloremquesintcorrupti.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 3,
+      "firstName": "Terrill",
+      "lastName": "Hills",
+      "profilePic": "https://robohash.org/consequunturautconsequatur.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 4,
+      "firstName": "Miles",
+      "lastName": "Cummerata",
+      "profilePic": "https://robohash.org/facilisdignissimosdolore.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 5,
+      "firstName": "Mavis",
+      "lastName": "Schultz",
+      "profilePic": "https://robohash.org/adverovelit.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 6,
+      "firstName": "Alison",
+      "lastName": "Reichert",
+      "profilePic": "https://robohash.org/laboriosamfacilisrem.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 7,
+      "firstName": "Oleta",
+      "lastName": "Abbott",
+      "profilePic": "https://robohash.org/cupiditatererumquos.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 8,
+      "firstName": "Ewell",
+      "lastName": "Mueller",
+      "profilePic": "https://robohash.org/quiaharumsapiente.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 9,
+      "firstName": "Demetrius",
+      "lastName": "Corkery",
+      "profilePic": "https://robohash.org/excepturiiuremolestiae.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 10,
+      "firstName": "Eleanora",
+      "lastName": "Price",
+      "profilePic": "https://robohash.org/aliquamcumqueiure.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 11,
+      "firstName": "Marcel",
+      "lastName": "Jones",
+      "profilePic": "https://robohash.org/impeditautest.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 12,
+      "firstName": "Assunta",
+      "lastName": "Rath",
+      "profilePic": "https://robohash.org/namquaerataut.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 13,
+      "firstName": "Trace",
+      "lastName": "Douglas",
+      "profilePic": "https://robohash.org/voluptatemsintnulla.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 14,
+      "firstName": "Enoch",
+      "lastName": "Lynch",
+      "profilePic": "https://robohash.org/quisequienim.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 15,
+      "firstName": "Jeanne",
+      "lastName": "Halvorson",
+      "profilePic": "https://robohash.org/autquiaut.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 16,
+      "firstName": "Trycia",
+      "lastName": "Fadel",
+      "profilePic": "https://robohash.org/porronumquamid.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 17,
+      "firstName": "Bradford",
+      "lastName": "Prohaska",
+      "profilePic": "https://robohash.org/accusantiumvoluptateseos.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 18,
+      "firstName": "Arely",
+      "lastName": "Skiles",
+      "profilePic": "https://robohash.org/nihilharumqui.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 19,
+      "firstName": "Gust",
+      "lastName": "Purdy",
+      "profilePic": "https://robohash.org/delenitipraesentiumvoluptatum.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 20,
+      "firstName": "Lenna",
+      "lastName": "Renner",
+      "profilePic": "https://robohash.org/ipsumutofficiis.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 21,
+      "firstName": "Doyle",
+      "lastName": "Ernser",
+      "profilePic": "https://robohash.org/providenttemporadelectus.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 22,
+      "firstName": "Tressa",
+      "lastName": "Weber",
+      "profilePic": "https://robohash.org/temporarecusandaeest.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 23,
+      "firstName": "Felicity",
+      "lastName": "Reilly",
+      "profilePic": "https://robohash.org/odioquivero.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 24,
+      "firstName": "Jocelyn",
+      "lastName": "Schuster",
+      "profilePic": "https://robohash.org/odiomolestiaealias.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 25,
+      "firstName": "Edwina",
+      "lastName": "Ernser",
+      "profilePic": "https://robohash.org/doloremautdolores.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 26,
+      "firstName": "Griffin",
+      "lastName": "Braun",
+      "profilePic": "https://robohash.org/laboriosammollitiaut.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 27,
+      "firstName": "Piper",
+      "lastName": "Schowalter",
+      "profilePic": "https://robohash.org/nequeodiosapiente.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 28,
+      "firstName": "Kody",
+      "lastName": "Terry",
+      "profilePic": "https://robohash.org/consequunturabnon.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 29,
+      "firstName": "Macy",
+      "lastName": "Greenfelder",
+      "profilePic": "https://robohash.org/amettemporeea.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    },
+    {
+      "id": 30,
+      "firstName": "Maurine",
+      "lastName": "Stracke",
+      "profilePic": "https://robohash.org/perferendisideveniet.png",
+      "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
+    }
   ],
-  "friends":[
-      {
-          "id": 1,
-          "userId": 1,
-          "firstName": "mirian 1",
-          "lastName": "khajishvili 1",
-          "profilePic": "picture 1",
-          "description": "this is friend user 1"
-      },
-      {
-          "id": 2,
-          "userId": 1,
-          "firstName": "mirian 2",
-          "lastName": "khajishvili 2",
-          "profilePic": "picture 2",
-          "description": "this is friend user 2"
-      }
+  "friends": [
+    {
+      "id": 1,
+      "userId": 1,
+      "firstName": "mirian 1",
+      "lastName": "khajishvili 1",
+      "profilePic": "picture 1",
+      "description": "this is friend user 1"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "firstName": "mirian 2",
+      "lastName": "khajishvili 2",
+      "profilePic": "picture 2",
+      "description": "this is friend user 2"
+    }
   ]
 }
