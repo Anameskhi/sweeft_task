@@ -12,11 +12,17 @@ import { MainLayoutModule } from './features/main-layout.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
+import { MatCardModule} from '@angular/material/card'
+
+import { MatInputModule} from '@angular/material/input';
+import { MatButtonModule} from '@angular/material/button'
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    UserInfoComponent
+    AppComponent
    
   ],
   imports: [
@@ -27,6 +33,12 @@ import { MatTableModule } from '@angular/material/table';
     MainLayoutModule,
     BrowserAnimationsModule,
     MatTableModule,
+    MatInputModule,
+    RouterModule,
+    MatCardModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

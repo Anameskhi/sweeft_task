@@ -10,30 +10,25 @@ import { UsersService } from '../core/services/users.service';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-  id?:number
-  users?:IUser[]
+  id?: number
+  users?: IUser[]
   constructor(
     private router: Router,
     private activateRoute: ActivatedRoute,
     private usersService: UsersService
-  ){}
-  
-  showUser(){
-    // const id = this.activateRoute.snapshot.params['id']
-    // this.router.navigate(['users-info/',id])
+  ) { }
 
-  }
 
-  
-  getAllUsers(){
-    this.usersService.getAllUsers().subscribe(res=>{
-     this.users = res
-     console.log(res)
+  getAllUsers() {
+    this.usersService.getAllUsers().subscribe(res => {
+      this.users = res
+      console.log(res)
     })
   }
+
   ngOnInit(): void {
     this.getAllUsers()
-      console.log(this.users)
+    console.log(this.users)
   }
-  
+
 }

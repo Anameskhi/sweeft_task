@@ -19,7 +19,7 @@ const routes: Routes = [
       },
       {
         path: 'user-info/:id',
-        component: UserInfoComponent
+        loadChildren: () => import('./user-info/user-info.module').then(m=> m.UserInfoModule)
       },
     ]
   }

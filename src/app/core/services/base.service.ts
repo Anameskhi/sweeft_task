@@ -15,4 +15,5 @@ export class BaseService {
   get<T>(url: string): Observable<T>{
     return this.http.get<T>(this.apiUrl + url)
   }
+
 }

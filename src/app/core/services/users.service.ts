@@ -18,4 +18,10 @@ export class UsersService extends BaseService{
 
   }
 
+  getCurrentUser(id: number): Observable<IUser>{
+    return this.get<IUser>(`users/${id}`)
+  }
+
+ 
+
 }
