@@ -8,12 +8,20 @@ body {
 }
 
 .card {
-    width: 400px;
-    border: none;
+    width: 500px;
+   
     border-radius: 14px !important;
     border: 2px solid rgb(238, 234, 234) ;
 
 }
+.border{
+    border: 2px solid rgb(238, 234, 234) ;
+
+}
+.product-items{
+    margin: auto;
+  }
+
 
 .area1 {
     background-color: #b5b2f1;
@@ -58,7 +66,8 @@ body {
     padding: 12px;
     border-radius: 10px;
     width: 49px;
-    margin-right: 10px
+    margin-right: 10px;
+    
 }
 
 .list-icons li i {
