@@ -1,13 +1,21 @@
-<div class="  row product-items ">
-    <div class="   mt-5 mb-5 col-12 col-sm-12 col-md-6 col-lg-4 text-center" *ngFor="let user of users">
-        <div class=" card row product-items">
-            <div class=" area1 p-3 py-5"> </div>
-            <div class=" area2 p- text-center px-3">
-                <div class="image mr-3"> <img [src]="user.profilePic" class="rounded-circle" width="100" />
-                    <h4 class=" name mt-3 ">{{user.firstName}} {{user.lastName}}</h4>
-                    <p class="information mt-3 text-justify"> {{user.description}}</p>
-                    <button class="btn btn-primary follow" [routerLink]="['/user-info',user.id]">See Profile</button>
+<ng-container *ngIf="loading; else loaded">
+    <div class="d-flex justify-content-center align-items-center  ">
+        <img src="./assets/images/loading.gif" alt="" class="loading">
+    </div>
+</ng-container>
+<ng-template #loaded>
+    <div class="  row product-items ">
+        <div class="   mt-5 mb-5 col-12 col-sm-12 col-md-6 col-lg-4 text-center" *ngFor="let user of users">
+            <div class=" card row product-items">
+                <div class=" area1 p-3 py-5"> </div>
+                <div class=" area2 p- text-center px-3">
+                    <div class="image mr-3"> <img [src]="user.profilePic" class="rounded-circle" width="100" />
+                        <h4 class=" name mt-3 ">{{user.firstName}} {{user.lastName}}</h4>
+                        <p class="information mt-3 text-justify"> {{user.description}}</p>
+                        <button class="btn btn-primary follow" [routerLink]="['/user-info',user.id]">See Profile</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</ng-template>

@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
 import { IFriend } from '../core/interfaces/friend.interface';
 import { IUser } from '../core/interfaces/user.interface';
 import { UsersService } from '../core/services/users.service';
@@ -43,6 +43,7 @@ export class UserInfoComponent implements OnInit {
   userFriends?: IFriend[]
   id!: number
   currUsr: any
+  sub$ = new Subject()
 
   // currentUser: Subject<any> = new Subject<any>()
   // currentUsr$ = this.currentUser.asObservable()
@@ -51,6 +52,7 @@ export class UserInfoComponent implements OnInit {
   lastName?: string
   description?: string
   image?: string
+  loading = true
 
 
   ngOnInit() {
@@ -59,9 +61,18 @@ export class UserInfoComponent implements OnInit {
     this.getCurrentUser()
   }
 
-  getUsersFriends() {
-    this.userService.getAllFriends().subscribe(res => {
+  ngOnDestroy(): void {
+    this.sub$.next(null)
+    this.sub$.complete()
+  }
 
+  getUsersFriends() {
+    this.userService.getAllFriends()
+    .pipe(takeUntil(this.sub$))
+    .subscribe(res => {
+      setTimeout(()=>{
+      this.loading = false
+      },1000)
       const userFriend = res.filter(user => user.userId == this.id)
       this.userFriends = userFriend
     })
@@ -70,6 +81,7 @@ export class UserInfoComponent implements OnInit {
   getCurrentUser() {
     const id = this.activate.snapshot.params['id']
     this.userService.getCurrentUser(id)
+    .pipe(takeUntil(this.sub$))
       .subscribe(currentUsr => {
         console.log(currentUsr)
         this.currUsr = currentUsr
@@ -86,5 +98,10 @@ export class UserInfoComponent implements OnInit {
     console.log(this.form.value)
     this.form.reset()
   }
+
+  showUser(id: number){
+    this.router.navigate(['user-info',id])
+  }
 }
+
 

@@ -97,3 +97,12 @@ body {
 
     background-color: #9e98ca;
 }
+.loading {
+    margin-top: 120px;
+    width: 300px;
+    height: 300px;
+    -webkit-border-radius: 75%;
+    -moz-border-radius: 75%;
+    background-color: #7098ee;
+    cursor: pointer;
+}
