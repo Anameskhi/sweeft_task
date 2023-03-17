@@ -44,14 +44,6 @@ export class UserInfoComponent implements OnInit {
   id!: number
   currUsr?: IUser
   sub$ = new Subject()
-
-  // currentUser: Subject<any> = new Subject<any>()
-  // currentUsr$ = this.currentUser.asObservable()
-
-  firstName?: string
-  lastName?: string
-  description?: string
-  image?: string
   loading = true
 
 

@@ -99,7 +99,7 @@
         </ng-container>
        
         <ng-template #loaded>
-        <h1 style="text-align: center;">{{userFriends?.length != 0? ('You can also see a list of '+ firstName+"'s friends("+userFriends?.length+')'):(firstName + "'s has no friends")}} </h1>
+        <h1 style="text-align: center;">{{userFriends?.length != 0? ('You can also see a list of '+ currUsr.firstName+"'s friends("+userFriends?.length+')'):(currUsr.firstName + "'s has no friends")}} </h1>
     <div class="  row product-items ">
         <div class="   mt-5 mb-5 col-12 col-sm-12 col-md-6 col-lg-4 text-center"
             *ngFor="let friend of userFriends ">
