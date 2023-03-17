@@ -1,10 +1,8 @@
 body {
-    background: url('https://images.unsplash.com/photo-1420496368970-d83b063b5b48?fit=crop&fm=jpg&h=700&q=80&w=1225') no-repeat center center;
     background-size: 1400px 700px;
     background-position: 30%;
     background-attachment: fixed;
 }
-
 
 .text {
     font-family: raleway;
@@ -27,8 +25,6 @@ body {
 .image1 {
     text-align: center;
     width: 200px;
-    /* Container's dimensions */
-
     height: 200px;
     -webkit-border-radius: 75%;
     -moz-border-radius: 75%;
@@ -87,7 +83,6 @@ img {
 .panel-group {
     width: 350px;
     margin: auto;
-    /*margin:50px 400px 50px 400px;*/
     max-width: 100%;
 }
 
@@ -118,8 +113,6 @@ img {
     background-color: transparent;
 }
 
-/* button CSS */
-
 .btn-danger.btn-outline {
     margin-top: 9px;
     background-color: transparent;
@@ -134,7 +127,6 @@ img {
     font-weight: 300;
     max-width: 100%;
 }
-
 
 .example-card {
     max-width: 400px;
@@ -308,7 +300,6 @@ textarea:hover {
     margin: auto;
   }
 
-
 .area1 {
     background-color: #b5b2f1;
     border-top-left-radius: 14px !important;
@@ -367,7 +358,6 @@ textarea:hover {
     }
 }
 
-
 .follow {
     border: 2px solid grey ;
     border-radius: 25px;
@@ -380,6 +370,5 @@ textarea:hover {
 }
 
 .follow:hover {
-
     background-color: #9e98ca;
 }

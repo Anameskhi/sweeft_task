@@ -56,14 +56,14 @@ export class UserInfoComponent implements OnInit {
 
 
   ngOnInit() {
-    this.activateRoute.params.subscribe( params => {
+    this.activateRoute.params.subscribe(params => {
       this.id = params['id'];
       this.getUsersFriends()
       this.getCurrentUser()
-      })
-    
-    
-   
+    })
+
+
+
   }
 
   ngOnDestroy(): void {

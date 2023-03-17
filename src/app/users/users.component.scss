@@ -9,18 +9,17 @@ body {
 
 .card {
     width: 500px;
-   
     border-radius: 14px !important;
-    border: 2px solid rgb(238, 234, 234) ;
-
+    border: 2px solid rgb(238, 234, 234);
 }
-.border{
-    border: 2px solid rgb(238, 234, 234) ;
 
+.border {
+    border: 2px solid rgb(238, 234, 234);
 }
-.product-items{
+
+.product-items {
     margin: auto;
-  }
+}
 
 
 .area1 {
@@ -67,7 +66,7 @@ body {
     border-radius: 10px;
     width: 49px;
     margin-right: 10px;
-    
+
 }
 
 .list-icons li i {
@@ -81,9 +80,8 @@ body {
     }
 }
 
-
 .follow {
-    border: 2px solid grey ;
+    border: 2px solid grey;
     border-radius: 25px;
     padding-right: 19px;
     padding-left: 19px;
@@ -94,9 +92,9 @@ body {
 }
 
 .follow:hover {
-
     background-color: #9e98ca;
 }
+
 .loading {
     margin-top: 120px;
     width: 300px;
