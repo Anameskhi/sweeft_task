@@ -9,12 +9,12 @@ import { BaseService } from './base.service';
 })
 export class UsersService extends BaseService{
 
-  getAllUsers():Observable<IUser[]>{
-    return this.get<IUser[]>('users')
+  getAllUsers(pageCount:number):Observable<IUser[]>{
+    return this.get<IUser[]>(`users?_start=${pageCount}&_limit=10`)
   }
 
   getAllFriends():Observable<IFriend[]>{
-    return this.get<IFriend[]>('friends')
+    return this.get<IFriend[]>(`friends?page=`)
 
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Observable, Subject, takeUntil } from 'rxjs';
 import { IUser } from '../core/interfaces/user.interface';
@@ -9,10 +9,14 @@ import { UsersService } from '../core/services/users.service';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss']
 })
-export class UsersComponent implements OnInit, OnDestroy{
+export class UsersComponent implements OnInit, OnDestroy {
   id?: number
-  users?: IUser[]
+  users: IUser[] = []
+
   loading = true
+  page = 0;
+  isLoading = false;
+
   sub$ = new Subject()
   constructor(
     private router: Router,
@@ -20,23 +24,35 @@ export class UsersComponent implements OnInit, OnDestroy{
     private usersService: UsersService
   ) { }
 
- 
+
 
   getAllUsers() {
-    this.usersService.getAllUsers()
-    .pipe(takeUntil(this.sub$))
-    .subscribe(res => {
-      setTimeout(()=>{
-        this.loading = false
-        },1000)
-      this.users = res
-      console.log(res)
-    })
+    this.isLoading = true;
+    this.usersService.getAllUsers(this.page)
+      .pipe(takeUntil(this.sub$))
+      .subscribe(res => {
+        setTimeout(() => {
+          this.loading = false
+        }, 1000)
+        this.users = this.users.concat(res)
+        console.log(res)
+        this.isLoading = false;
+      })
+  }
+  @HostListener('window:scroll', ['$event'])
+
+  onScroll(event: any) {
+
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      if (!this.isLoading) {
+        this.page += 10;
+        this.getAllUsers();
+      }
+    }
   }
 
   ngOnInit(): void {
     this.getAllUsers()
-    console.log(this.users)
   }
 
   ngOnDestroy(): void {
