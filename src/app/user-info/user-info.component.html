@@ -1,11 +1,12 @@
 <div class="box">
-    <div id="overlay">
+    <div id="overlay" *ngIf="currUsr">
         <div class="image1">
             <div class="trick">
-                <img [src]="image" alt="">
+                <img [src]="currUsr?.profilePic" alt="">
             </div>
         </div>
-        <ul class="text">{{firstName}} {{lastName}}</ul>
+        
+        <ul class="text">{{currUsr.firstName}} {{currUsr.lastName}}</ul>
 
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
@@ -13,14 +14,14 @@
                     <h4 class="panel-title ">
                         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
                             aria-expanded="" aria-controls="collapseOne">
-                            <div class="title  btn btn-danger btn-outline btn-lg">ABOUT {{firstName?.toUpperCase()}}
+                            <div class="title  btn btn-danger btn-outline btn-lg">ABOUT {{currUsr.firstName?.toUpperCase()}}
                             </div>
                         </a>
                     </h4>
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
-                        {{description}}
+                        {{currUsr.description}}
                     </div>
                 </div>
             </div>
@@ -117,4 +118,5 @@
         </div>
     </div>
 </ng-template>
-       
+
+

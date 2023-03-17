@@ -42,7 +42,7 @@ export class UserInfoComponent implements OnInit {
 
   userFriends?: IFriend[]
   id!: number
-  currUsr: any
+  currUsr?: IUser
   sub$ = new Subject()
 
   // currentUser: Subject<any> = new Subject<any>()
@@ -61,9 +61,6 @@ export class UserInfoComponent implements OnInit {
       this.getUsersFriends()
       this.getCurrentUser()
     })
-
-
-
   }
 
   ngOnDestroy(): void {
@@ -84,18 +81,14 @@ export class UserInfoComponent implements OnInit {
   }
 
   getCurrentUser() {
-    const id = this.activate.snapshot.params['id']
-    this.userService.getCurrentUser(id)
+    this.userService.getCurrentUser(this.id)
       .pipe(takeUntil(this.sub$))
       .subscribe(currentUsr => {
         console.log(currentUsr)
         this.currUsr = currentUsr
-        this.firstName = currentUsr.firstName
-        this.lastName = currentUsr.lastName
-        this.description = currentUsr.description
-        this.image = currentUsr.profilePic
       })
   }
+
   submit() {
     this.form.markAllAsTouched()
     if (this.form.invalid) return;
