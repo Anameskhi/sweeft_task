@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { IFriend } from '../core/interfaces/friend.interface';
 import { IUser } from '../core/interfaces/user.interface';
@@ -56,9 +56,14 @@ export class UserInfoComponent implements OnInit {
 
 
   ngOnInit() {
-    this.id = this.activate.snapshot.params['id']
-    this.getUsersFriends()
-    this.getCurrentUser()
+    this.activateRoute.params.subscribe( params => {
+      this.id = params['id'];
+      this.getUsersFriends()
+      this.getCurrentUser()
+      })
+    
+    
+   
   }
 
   ngOnDestroy(): void {
@@ -68,20 +73,20 @@ export class UserInfoComponent implements OnInit {
 
   getUsersFriends() {
     this.userService.getAllFriends()
-    .pipe(takeUntil(this.sub$))
-    .subscribe(res => {
-      setTimeout(()=>{
-      this.loading = false
-      },1000)
-      const userFriend = res.filter(user => user.userId == this.id)
-      this.userFriends = userFriend
-    })
+      .pipe(takeUntil(this.sub$))
+      .subscribe(res => {
+        setTimeout(() => {
+          this.loading = false
+        }, 1000)
+        const userFriend = res.filter(user => user.userId == this.id)
+        this.userFriends = userFriend
+      })
   }
 
   getCurrentUser() {
     const id = this.activate.snapshot.params['id']
     this.userService.getCurrentUser(id)
-    .pipe(takeUntil(this.sub$))
+      .pipe(takeUntil(this.sub$))
       .subscribe(currentUsr => {
         console.log(currentUsr)
         this.currUsr = currentUsr
@@ -99,8 +104,8 @@ export class UserInfoComponent implements OnInit {
     this.form.reset()
   }
 
-  showUser(id: number){
-    this.router.navigate(['user-info',id])
+  showUser(id: number) {
+    this.router.navigate(['user-info', id])
   }
 }
 
