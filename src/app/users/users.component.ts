@@ -14,7 +14,7 @@ export class UsersComponent implements OnInit, OnDestroy {
   users: IUser[] = []
 
   loading = true
-  page = 0;
+  page = 1;
   isLoading = false;
 
   sub$ = new Subject()
@@ -43,10 +43,13 @@ export class UsersComponent implements OnInit, OnDestroy {
 
   onScroll(event: any) {
 
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    const pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
+    const max = document.documentElement.scrollHeight;
+    if (pos == max) {
+      
       if (!this.isLoading) {
-        this.page += 10;
-        this.getAllUsers();
+        this.page++; 
+        this.getAllUsers(); 
       }
     }
   }

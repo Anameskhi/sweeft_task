@@ -10,11 +10,11 @@ import { BaseService } from './base.service';
 export class UsersService extends BaseService{
 
   getAllUsers(pageCount:number):Observable<IUser[]>{
-    return this.get<IUser[]>(`users?_start=${pageCount}&_limit=10`)
+    return this.get<IUser[]>(`users?_page=${pageCount}`)
   }
 
   getAllFriends():Observable<IFriend[]>{
-    return this.get<IFriend[]>(`friends?page=`)
+    return this.get<IFriend[]>(`friends`)
 
   }
 

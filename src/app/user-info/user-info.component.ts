@@ -84,7 +84,6 @@ export class UserInfoComponent implements OnInit {
   submit() {
     this.form.markAllAsTouched()
     if (this.form.invalid) return;
-
     console.log(this.form.value)
     this.form.reset()
   }
