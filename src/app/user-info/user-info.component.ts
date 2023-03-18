@@ -12,23 +12,6 @@ import { UsersService } from '../core/services/users.service';
   styleUrls: ['./user-info.component.scss']
 })
 export class UserInfoComponent implements OnInit {
-  constructor(
-    private activate: ActivatedRoute,
-    private userService: UsersService,
-    private activateRoute: ActivatedRoute,
-    private router: Router
-
-  ) { }
-
-  form: FormGroup = new FormGroup({
-    fullName: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    message: new FormControl('',
-      [Validators.required,
-      Validators.minLength(3),
-      Validators.maxLength(10)])
-
-  })
 
   get getEmail() {
     return this.form.get('email')
@@ -47,6 +30,14 @@ export class UserInfoComponent implements OnInit {
   loading = true
 
 
+  constructor(
+    private activate: ActivatedRoute,
+    private userService: UsersService,
+    private activateRoute: ActivatedRoute,
+    private router: Router
+
+  ) { }
+
   ngOnInit() {
     this.activateRoute.params.subscribe(params => {
       this.id = params['id'];
@@ -59,6 +50,17 @@ export class UserInfoComponent implements OnInit {
     this.sub$.next(null)
     this.sub$.complete()
   }
+
+  form: FormGroup = new FormGroup({
+    fullName: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    message: new FormControl('',
+      [Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(10)])
+
+  })
+ 
 
   getUsersFriends() {
     this.userService.getAllFriends()
