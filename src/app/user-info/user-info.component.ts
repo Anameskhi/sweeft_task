@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { IFriend } from '../core/interfaces/friend.interface';
 import { IUser } from '../core/interfaces/user.interface';
@@ -12,6 +12,15 @@ import { UsersService } from '../core/services/users.service';
   styleUrls: ['./user-info.component.scss']
 })
 export class UserInfoComponent implements OnInit {
+
+  userFriends: IFriend[] = []
+  id!: number
+  currUsr?: IUser
+  sub$ = new Subject()
+  loading = true
+  page = 1;
+  isLoading = false;
+
   constructor(
     private activate: ActivatedRoute,
     private userService: UsersService,
@@ -40,13 +49,6 @@ export class UserInfoComponent implements OnInit {
     return this.form.get('message')
   }
 
-  userFriends: IFriend[] = []
-  id!: number
-  currUsr?: IUser
-  sub$ = new Subject()
-  loading = true
-  
-
   ngOnInit() {
     this.activateRoute.params.subscribe(params => {
       this.id = params['id'];
@@ -60,29 +62,29 @@ export class UserInfoComponent implements OnInit {
     this.sub$.complete()
   }
   
-  page = 1;
-  isLoading = false;
 
   getUsersFriends() {
     this.isLoading = true;
-
-    this.userService.getAllFriends(this.page)
+    this.userService.getAllFriends(this.page,this.id)
       .pipe(takeUntil(this.sub$))
       .subscribe(res => {
         setTimeout(() => {
           this.loading = false
         }, 1000)
-         const userFriends = res.filter(user => user.userId == this.id)
-            this.userFriends = this.userFriends.concat(userFriends)
+         
+            this.userFriends = this.userFriends.concat(res)
+            console.log(res)
             this.isLoading = false;
           })
       }
-      @HostListener('window:scroll', ['$event'])
+      
+  @HostListener('window:scroll', ['$event'])
+
   onScroll(event: any) {
 
-    const pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
-    const max = document.documentElement.scrollHeight;
-    if (pos == max) {
+    const position = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
+    const maxHeight = document.documentElement.scrollHeight;
+    if (position == maxHeight) {
       
       if (!this.isLoading) {
         this.page++; 

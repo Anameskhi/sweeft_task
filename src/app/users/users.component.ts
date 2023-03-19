@@ -12,9 +12,9 @@ import { UsersService } from '../core/services/users.service';
 export class UsersComponent implements OnInit, OnDestroy {
   id?: number
   users: IUser[] = []
-
   loading = true
- 
+  page = 1;
+  isLoading = false;
 
   sub$ = new Subject()
   constructor(
@@ -23,10 +23,6 @@ export class UsersComponent implements OnInit, OnDestroy {
     private usersService: UsersService
   ) { }
 
-
-  page = 1;
-  isLoading = false;
-  
   getAllUsers() {
     this.isLoading = true;
     this.usersService.getAllUsers(this.page)
@@ -44,9 +40,9 @@ export class UsersComponent implements OnInit, OnDestroy {
 
   onScroll(event: any) {
 
-    const pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
-    const max = document.documentElement.scrollHeight;
-    if (pos == max) {
+    const position = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
+    const maxHeight = document.documentElement.scrollHeight;
+    if (position == maxHeight) {
       
       if (!this.isLoading) {
         this.page++; 
