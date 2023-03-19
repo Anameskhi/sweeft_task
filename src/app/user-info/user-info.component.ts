@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
@@ -11,7 +11,7 @@ import { UsersService } from '../core/services/users.service';
   templateUrl: './user-info.component.html',
   styleUrls: ['./user-info.component.scss']
 })
-export class UserInfoComponent implements OnInit {
+export class UserInfoComponent implements OnInit,OnDestroy {
 
   userFriends: IFriend[] = []
   id!: number
@@ -20,6 +20,7 @@ export class UserInfoComponent implements OnInit {
   loading = true
   page = 1;
   isLoading = false;
+  
 
   constructor(
     private activate: ActivatedRoute,
@@ -50,10 +51,13 @@ export class UserInfoComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.activateRoute.params.subscribe(params => {
       this.id = params['id'];
-      this.getUsersFriends()
+
       this.getCurrentUser()
+      this.getUsersFriends()
+
     })
   }
 
@@ -61,23 +65,23 @@ export class UserInfoComponent implements OnInit {
     this.sub$.next(null)
     this.sub$.complete()
   }
+
   
 
   getUsersFriends() {
     this.isLoading = true;
-    this.userService.getAllFriends(this.page,this.id)
+    this.userService.getAllFriends(this.page, this.id)
       .pipe(takeUntil(this.sub$))
       .subscribe(res => {
         setTimeout(() => {
           this.loading = false
         }, 1000)
-         
-            this.userFriends = this.userFriends.concat(res)
-            console.log(res)
-            this.isLoading = false;
-          })
-      }
-      
+        this.userFriends = this.userFriends.concat(res)
+        console.log(res)
+        this.isLoading = false;
+      })
+  }
+
   @HostListener('window:scroll', ['$event'])
 
   onScroll(event: any) {
@@ -85,10 +89,10 @@ export class UserInfoComponent implements OnInit {
     const position = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
     const maxHeight = document.documentElement.scrollHeight;
     if (position == maxHeight) {
-      
+
       if (!this.isLoading) {
-        this.page++; 
-        this.getUsersFriends(); 
+        this.page++;
+        this.getUsersFriends();
       }
     }
   }
@@ -98,6 +102,7 @@ export class UserInfoComponent implements OnInit {
       .subscribe(currentUsr => {
         console.log(currentUsr)
         this.currUsr = currentUsr
+
       })
   }
 
