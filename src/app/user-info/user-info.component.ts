@@ -116,6 +116,14 @@ export class UserInfoComponent implements OnInit,OnDestroy {
   showUser(id: number) {
     this.router.navigate(['user-info', id])
   }
+
+  delete(id: number){
+    this.userService.deleteUser(id).subscribe(friends=>{
+      this.router.navigate(['users'])
+    })
+   
+
+  }
 }
 
 

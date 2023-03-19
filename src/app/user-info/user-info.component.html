@@ -49,6 +49,13 @@
                             href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             <div class="title btn btn-danger btn-outline btn-lg">CONTACT</div>
                         </a>
+                        
+                            <button style="background-color: rgb(164, 7, 7);" class="title btn btn-danger btn-outline btn-lg" (click)="delete(currUsr.id)" >DELETE
+                                {{currUsr.firstName.toUpperCase()}}</button>
+                   
+                       
+
+                     
                     </h4>
                 </div>
                 <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
@@ -110,8 +117,8 @@
                         <h4 class=" name mt-3 ">{{friend.firstName}} {{friend.lastName}}</h4>
                         <p class="information mt-3 text-justify"> {{friend.description}}</p>
 
-                        <button class="btn btn-primary follow" (click)="showUser(friend.id)" >See
-                            Profile</button>
+                        <button class="btn btn-primary follow" (click)="showUser(friend.id)" >See Profile</button>
+                            
                     </div>
                 </div>
             </div>

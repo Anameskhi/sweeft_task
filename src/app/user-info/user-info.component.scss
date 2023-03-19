@@ -98,6 +98,7 @@ img {
     font-weight: 300;
     font-size: 15px;
     max-width: 100%;
+    background-color: brown;
 }
 
 #accordion {
@@ -366,9 +367,18 @@ textarea:hover {
     height: 42px;
     font-size: 13px;
     width: 130px;
-    background-color: #8b86b0
+    background-color: #aca9c3
 }
 
 .follow:hover {
     background-color: #9e98ca;
+}
+.delete{
+    background-color: brown;
+    border-radius: 25px;
+    padding-right: 19px;
+    padding-left: 19px;
+    height: 42px;
+    font-size: 13px;
+    width: 130px;
 }

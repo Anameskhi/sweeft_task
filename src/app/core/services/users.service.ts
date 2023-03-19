@@ -22,6 +22,10 @@ export class UsersService extends BaseService{
     return this.get<IUser>(`users/${id}`)
   }
 
+  deleteUser(id: number):Observable<IFriend>{
+    return this.delete<IFriend>(`users/${id}`)
+  }
+
  
 
 }
