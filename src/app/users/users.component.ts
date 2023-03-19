@@ -1,6 +1,6 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
-import { Observable, Subject, takeUntil } from 'rxjs';
+import { ActivatedRoute,Router } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 import { IUser } from '../core/interfaces/user.interface';
 import { UsersService } from '../core/services/users.service';
 
@@ -14,8 +14,7 @@ export class UsersComponent implements OnInit, OnDestroy {
   users: IUser[] = []
 
   loading = true
-  page = 1;
-  isLoading = false;
+ 
 
   sub$ = new Subject()
   constructor(
@@ -25,7 +24,9 @@ export class UsersComponent implements OnInit, OnDestroy {
   ) { }
 
 
-
+  page = 1;
+  isLoading = false;
+  
   getAllUsers() {
     this.isLoading = true;
     this.usersService.getAllUsers(this.page)

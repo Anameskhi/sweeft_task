@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
@@ -12,6 +12,23 @@ import { UsersService } from '../core/services/users.service';
   styleUrls: ['./user-info.component.scss']
 })
 export class UserInfoComponent implements OnInit {
+  constructor(
+    private activate: ActivatedRoute,
+    private userService: UsersService,
+    private activateRoute: ActivatedRoute,
+    private router: Router
+
+  ) { }
+
+  form: FormGroup = new FormGroup({
+    fullName: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    message: new FormControl('',
+      [Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(10)])
+
+  })
 
   get getEmail() {
     return this.form.get('email')
@@ -23,20 +40,12 @@ export class UserInfoComponent implements OnInit {
     return this.form.get('message')
   }
 
-  userFriends?: IFriend[]
+  userFriends: IFriend[] = []
   id!: number
   currUsr?: IUser
   sub$ = new Subject()
   loading = true
-
-
-  constructor(
-    private activate: ActivatedRoute,
-    private userService: UsersService,
-    private activateRoute: ActivatedRoute,
-    private router: Router
-
-  ) { }
+  
 
   ngOnInit() {
     this.activateRoute.params.subscribe(params => {
@@ -50,30 +59,37 @@ export class UserInfoComponent implements OnInit {
     this.sub$.next(null)
     this.sub$.complete()
   }
-
-  form: FormGroup = new FormGroup({
-    fullName: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    message: new FormControl('',
-      [Validators.required,
-      Validators.minLength(3),
-      Validators.maxLength(10)])
-
-  })
- 
+  
+  page = 1;
+  isLoading = false;
 
   getUsersFriends() {
-    this.userService.getAllFriends()
+    this.isLoading = true;
+
+    this.userService.getAllFriends(this.page)
       .pipe(takeUntil(this.sub$))
       .subscribe(res => {
         setTimeout(() => {
           this.loading = false
         }, 1000)
-        const userFriend = res.filter(user => user.userId == this.id)
-        this.userFriends = userFriend
-      })
-  }
+         const userFriends = res.filter(user => user.userId == this.id)
+            this.userFriends = this.userFriends.concat(userFriends)
+            this.isLoading = false;
+          })
+      }
+      @HostListener('window:scroll', ['$event'])
+  onScroll(event: any) {
 
+    const pos = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
+    const max = document.documentElement.scrollHeight;
+    if (pos == max) {
+      
+      if (!this.isLoading) {
+        this.page++; 
+        this.getUsersFriends(); 
+      }
+    }
+  }
   getCurrentUser() {
     this.userService.getCurrentUser(this.id)
       .pipe(takeUntil(this.sub$))

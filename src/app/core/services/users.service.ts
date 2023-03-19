@@ -13,8 +13,8 @@ export class UsersService extends BaseService{
     return this.get<IUser[]>(`users?_page=${pageCount}`)
   }
 
-  getAllFriends():Observable<IFriend[]>{
-    return this.get<IFriend[]>(`friends`)
+  getAllFriends( pageCount: number):Observable<IFriend[]>{
+    return this.get<IFriend[]>(`friends?_page=${pageCount}`)
 
   }
 

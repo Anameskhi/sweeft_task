@@ -100,9 +100,9 @@
        
         <ng-template #loaded >
         <h1 style="text-align: center;">{{userFriends?.length != 0? ('You can also see a list of '+ currUsr.firstName+"'s friends("+userFriends?.length+')'):(currUsr.firstName + "'s has no friends")}} </h1>
-    <div class="  row product-items "  >
-        <div class="   mt-5 mb-5 col-12 col-sm-12 col-md-6 col-lg-4 text-center"
-            *ngFor="let friend of userFriends ">
+    <div class="  row product-items "  (scroll)="onScroll($event)">
+        <div class="   mt-5 mb-5 col-12 col-sm text-center"
+            *ngFor="let friend of userFriends " >
             <div class=" card row product-items">
                 <div class=" area1 p-3 py-5"> </div>
                 <div class=" area2 p- text-center px-3">
