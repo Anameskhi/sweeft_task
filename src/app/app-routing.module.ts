@@ -18,8 +18,12 @@ const routes: Routes = [
         loadChildren: () => import('./users/users.module').then(m=> m.UsersModule)
       },
       {
-        path: 'users-info/:id',
-        component: UserInfoComponent
+        path: 'user-info/:id',
+        loadChildren: () => import('./user-info/user-info.module').then(m=> m.UserInfoModule)
+      },
+      {
+        path: 'create-user',
+        loadChildren: () => import('./create-user/create-user.module').then(m=> m.CreateUserModule)
       },
     ]
   }
