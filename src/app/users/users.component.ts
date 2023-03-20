@@ -1,5 +1,5 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute,Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { IUser } from '../core/interfaces/user.interface';
 import { UsersService } from '../core/services/users.service';
@@ -43,10 +43,10 @@ export class UsersComponent implements OnInit, OnDestroy {
     const position = (document.documentElement.scrollTop || document.body.scrollTop) + document.documentElement.offsetHeight;
     const maxHeight = document.documentElement.scrollHeight;
     if (position == maxHeight) {
-      
+
       if (!this.isLoading) {
-        this.page++; 
-        this.getAllUsers(); 
+        this.page++;
+        this.getAllUsers();
       }
     }
   }

@@ -1,11 +1,11 @@
-<div class="box" >
+<div class="box">
     <div id="overlay" *ngIf="currUsr">
         <div class="image1">
             <div class="trick">
                 <img [src]="currUsr?.profilePic" alt="">
             </div>
         </div>
-        
+
         <ul class="text">{{currUsr.firstName}} {{currUsr.lastName}}</ul>
 
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -14,7 +14,8 @@
                     <h4 class="panel-title ">
                         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
                             aria-expanded="" aria-controls="collapseOne">
-                            <div class="title  btn btn-danger btn-outline btn-lg">ABOUT {{currUsr.firstName?.toUpperCase()}}
+                            <div class="title  btn btn-danger btn-outline btn-lg">ABOUT
+                                {{currUsr.firstName?.toUpperCase()}}
                             </div>
                         </a>
                     </h4>
@@ -36,7 +37,8 @@
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                     <div class="panel-body">
-                        {{currUsr.firstName}} has been building websites for years. He enjoys making unique websites and web projects.
+                        {{currUsr.firstName}} has been building websites for years. He enjoys making unique websites and
+                        web projects.
                         His hobbies include photography, traveling, fishing, watching movies and playing tennis.
                     </div>
                 </div>
@@ -48,13 +50,14 @@
                             href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             <div class="title btn btn-danger btn-outline btn-lg">CONTACT</div>
                         </a>
-                        
-                            <button style="background-color: rgb(164, 7, 7);" class="title btn btn-danger btn-outline btn-lg" (click)="delete(currUsr.id)" >DELETE
-                                {{currUsr.firstName.toUpperCase()}}</button>
-                   
-                       
 
-                     
+                        <button style="background-color: rgb(164, 7, 7);"
+                            class="title btn btn-danger btn-outline btn-lg" (click)="delete(currUsr.id)">DELETE
+                            {{currUsr.firstName.toUpperCase()}}</button>
+
+
+
+
                     </h4>
                 </div>
                 <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
@@ -94,7 +97,7 @@
 
                         </form>
                     </div>
-                   
+
                 </div>
             </div>
         </div>
@@ -103,26 +106,27 @@
                 <img src="./assets/images/loading.gif" alt="" width='60px'>
             </div>
         </ng-container>
-       
-        <ng-template #loaded >
-        <h1 style="text-align: center;">{{userFriends?.length != 0? ('You can also see  '+ currUsr.firstName+"'s friends list before scrolling("+userFriends?.length+')'):(currUsr.firstName + "'s has no friends")}} </h1>
-    <div class="  row product-items "  (scroll)="onScroll($event)">
-        <div class="   mt-5 mb-5 col-12 col-sm text-center"
-            *ngFor="let friend of userFriends " >
-            <div class=" card row product-items">
-                <div class=" area1 p-3 py-5"> </div>
-                <div class=" area2 p- text-center px-3">
-                    <div class="image mr-3"> <img [src]="friend.profilePic" class="rounded-circle" width="100" />
-                        <h4 class=" name mt-3 ">{{friend.firstName}} {{friend.lastName}}</h4>
-                        <p class="information mt-3 text-justify"> {{friend.description}}</p>
 
-                        <button class="btn btn-primary follow" (click)="showUser(friend.id)" >See Profile</button>
-                            
+        <ng-template #loaded>
+            <h1 style="text-align: center;">{{userFriends?.length != 0? ('You can also see '+ currUsr.firstName+"'s
+                friends list before scrolling("+userFriends?.length+')'):(currUsr.firstName + "'s has no friends")}}
+            </h1>
+            <div class="  row product-items " (scroll)="onScroll($event)">
+                <div class="   mt-5 mb-5 col-12 col-sm text-center" *ngFor="let friend of userFriends ">
+                    <div class=" card row product-items">
+                        <div class=" area1 p-3 py-5"> </div>
+                        <div class=" area2 p- text-center px-3">
+                            <div class="image mr-3"> <img [src]="friend.profilePic" class="rounded-circle"
+                                    width="100" />
+                                <h4 class=" name mt-3 ">{{friend.firstName}} {{friend.lastName}}</h4>
+                                <p class="information mt-3 text-justify"> {{friend.description}}</p>
+
+                                <button class="btn btn-primary follow" (click)="showUser(friend.id)">See
+                                    Profile</button>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</ng-template>
-
-
+        </ng-template>

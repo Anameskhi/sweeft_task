@@ -13,31 +13,31 @@ import { UsersService } from '../core/services/users.service';
   styleUrls: ['./create-user.component.scss']
 })
 export class CreateUserComponent implements OnInit {
-  get getFirstName(){
+  get getFirstName() {
     return this.form.get('firstName')
   }
-  get getLastName(){
+  get getLastName() {
     return this.form.get('lastName')
   }
-  get getPicture(){
+  get getPicture() {
     return this.form.get('profilePic')
   }
-  get getDescription(){
+  get getDescription() {
     return this.form.get('description')
   }
 
   form: FormGroup = new FormGroup(
-    { 
-      firstName: new FormControl('',Validators.required),
-      lastName: new FormControl('',Validators.required),
-      profilePic: new FormControl('',Validators.required,),
-      description: new FormControl('',[
+    {
+      firstName: new FormControl('', Validators.required),
+      lastName: new FormControl('', Validators.required),
+      profilePic: new FormControl('', Validators.required),
+      description: new FormControl('', [
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(100)
       ])
     })
-    
+
   constructor(
     private usersService: UsersService,
     private toastAlert: NgToastService,
@@ -46,17 +46,17 @@ export class CreateUserComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  submit(){
+  submit() {
     this.form.markAllAsTouched()
-    if(this.form.invalid)return;
+    if (this.form.invalid) return;
 
-      console.log(this.form.value)
-      if(this.form.valid){
-        this.usersService.createUsers(this.form.value).subscribe(res=>{
-          this.toastAlert.success({detail: "Success Message",summary:"User successfully created",duration:3000})
-       this.router.navigate(['users'])
-        })
-      }
+    console.log(this.form.value)
+    if (this.form.valid) {
+      this.usersService.createUsers(this.form.value).subscribe(res => {
+        this.toastAlert.success({ detail: "Success Message", summary: "User successfully created", duration: 3000 })
+        this.router.navigate(['users'])
+      })
+    }
   }
 
 }

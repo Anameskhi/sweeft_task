@@ -12,7 +12,7 @@ import { MessageService } from '../core/services/messaage.service';
   templateUrl: './user-info.component.html',
   styleUrls: ['./user-info.component.scss']
 })
-export class UserInfoComponent implements OnInit,OnDestroy {
+export class UserInfoComponent implements OnInit, OnDestroy {
 
   userFriends: IFriend[] = []
   id!: number
@@ -21,7 +21,7 @@ export class UserInfoComponent implements OnInit,OnDestroy {
   loading = true
   page = 1;
   isLoading = false;
-  
+
 
   constructor(
     private userService: UsersService,
@@ -109,12 +109,12 @@ export class UserInfoComponent implements OnInit,OnDestroy {
     this.form.markAllAsTouched()
     if (this.form.invalid) return;
     console.log(this.form.value)
-    if(this.form.valid){
-      this.messageService.createMessage(this.form.value).subscribe(res=>{
-        this.toastAlert.success({detail: "Success Message",summary:"Your message has been sent successfully",duration:3000})
-    
+    if (this.form.valid) {
+      this.messageService.createMessage(this.form.value).subscribe(res => {
+        this.toastAlert.success({ detail: "Success Message", summary: "Your message has been sent successfully", duration: 3000 })
+
       })
-      } 
+    }
     this.form.reset()
     this.router.navigate(['users'])
   }
@@ -123,12 +123,12 @@ export class UserInfoComponent implements OnInit,OnDestroy {
     this.router.navigate(['user-info', id])
   }
 
-  delete(id: number){
-    this.userService.deleteUser(id).subscribe(users=>{
-      this.toastAlert.success({detail: "Success Message",summary:"User successfully deleted",duration:3000})
+  delete(id: number) {
+    this.userService.deleteUser(id).subscribe(users => {
+      this.toastAlert.success({ detail: "Success Message", summary: "User successfully deleted", duration: 3000 })
       this.router.navigate(['users'])
     })
-   
+
   }
 }
 
