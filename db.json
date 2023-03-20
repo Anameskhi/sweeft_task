@@ -209,14 +209,8 @@
       "lastName": "Stracke",
       "profilePic": "https://robohash.org/perferendisideveniet.png",
       "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
-    },
-    {
-      "firstName": "Ana",
-      "lastName": "Meskhi",
-      "profilePic": "https://thumbs.dreamstime.com/b/steps-to-success-step-one-confidence-step-tow-start-step-three-perseverance-success-steps-to-success-131215982.jpg",
-      "description": "sas",
-      "id": 31
     }
+
   ],
   "friends": [
     {
