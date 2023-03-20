@@ -1,11 +1,9 @@
-<ng-container *ngIf="loading; else loaded" >
-    <div class="d-flex justify-content-center align-items-center"  >
-        <img src="./assets/images/loading.gif" alt="" class="loading">
-    </div>
-</ng-container>
-<ng-template #loaded >
+
+
+
     <div class="  row product-items "  (scroll)="onScroll($event)">
         <div class="   mt-5 mb-5 col-12 col-sm text-center" *ngFor="let user of users">
+            
             <div class=" card row product-items">
                 <div class=" area1 p-3 py-5"> </div>
                 <div class=" area2 p- text-center px-3">
@@ -19,8 +17,5 @@
             </div>
         </div>
     </div>
-</ng-template>
 
-<div *ngIf="isLoading">
-    <i class="fa fa-spinner fa-spin"></i> Loading...
-  </div>
+

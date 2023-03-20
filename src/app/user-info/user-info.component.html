@@ -37,8 +37,7 @@
                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                     <div class="panel-body">
                         {{currUsr.firstName}} has been building websites for years. He enjoys making unique websites and web projects.
-                        His hobbies include photography, woodworking, leatherworking, fishing, and mid century modern
-                        furniture.
+                        His hobbies include photography, traveling, fishing, watching movies and playing tennis.
                     </div>
                 </div>
             </div>
@@ -82,7 +81,7 @@
                             <mat-form-field class="example-full-width">
                                 <mat-label>Message</mat-label>
                                 <textarea matInput placeholder="Text Area" name="textArea"
-                                    formControlName="message"></textarea>
+                                    formControlName="textMessage"></textarea>
                                 <mat-error *ngIf="getMessage?.errors?.['required'] && getMessage?.touched">Text Area is
                                     required</mat-error>
                                 <mat-error *ngIf="getMessage?.errors?.['minlength'] && getMessage?.touched">Text Area

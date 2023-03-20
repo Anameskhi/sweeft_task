@@ -16,6 +16,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgToastModule } from 'ng-angular-popup';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { NgToastModule } from 'ng-angular-popup';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatToolbarModule,
-    NgToastModule
+    NgToastModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

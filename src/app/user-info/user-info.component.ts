@@ -6,6 +6,7 @@ import { IFriend } from '../core/interfaces/friend.interface';
 import { IUser } from '../core/interfaces/user.interface';
 import { UsersService } from '../core/services/users.service';
 import { NgToastService } from 'ng-angular-popup';
+import { MessageService } from '../core/services/messaage.service';
 @Component({
   selector: 'app-user-info',
   templateUrl: './user-info.component.html',
@@ -23,22 +24,21 @@ export class UserInfoComponent implements OnInit,OnDestroy {
   
 
   constructor(
-    private activate: ActivatedRoute,
     private userService: UsersService,
     private activateRoute: ActivatedRoute,
     private router: Router,
-    private toastAlert: NgToastService
+    private toastAlert: NgToastService,
+    private messageService: MessageService
 
   ) { }
 
   form: FormGroup = new FormGroup({
     fullName: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
-    message: new FormControl('',
+    textMessage: new FormControl('',
       [Validators.required,
       Validators.minLength(3),
       Validators.maxLength(10)])
-
   })
 
   get getEmail() {
@@ -48,7 +48,7 @@ export class UserInfoComponent implements OnInit,OnDestroy {
     return this.form.get('fullName')
   }
   get getMessage() {
-    return this.form.get('message')
+    return this.form.get('textMessage')
   }
 
   ngOnInit() {
@@ -66,8 +66,6 @@ export class UserInfoComponent implements OnInit,OnDestroy {
     this.sub$.next(null)
     this.sub$.complete()
   }
-
-  
 
   getUsersFriends() {
     this.isLoading = true;
@@ -111,7 +109,14 @@ export class UserInfoComponent implements OnInit,OnDestroy {
     this.form.markAllAsTouched()
     if (this.form.invalid) return;
     console.log(this.form.value)
+    if(this.form.valid){
+      this.messageService.createMessage(this.form.value).subscribe(res=>{
+        this.toastAlert.success({detail: "Success Message",summary:"Your message has been sent successfully",duration:3000})
+    
+      })
+      } 
     this.form.reset()
+    this.router.navigate(['users'])
   }
 
   showUser(id: number) {
@@ -124,7 +129,6 @@ export class UserInfoComponent implements OnInit,OnDestroy {
       this.router.navigate(['users'])
     })
    
-
   }
 }
 

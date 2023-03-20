@@ -9,6 +9,10 @@ import { BaseService } from './base.service';
 })
 export class UsersService extends BaseService{
 
+  createUsers(body:IUser):Observable<IUser>{
+    return this.post<IUser>('users',body)
+  }
+  
   getAllUsers(pageCount:number):Observable<IUser[]>{
     return this.get<IUser[]>(`users?_page=${pageCount}`)
   }
