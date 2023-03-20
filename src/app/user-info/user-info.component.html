@@ -2,7 +2,7 @@
     <div id="overlay" *ngIf="currUsr">
         <div class="image1">
             <div class="trick">
-                <img [src]="currUsr?.profilePic" alt="">
+                <img [src]="currUsr.profilePic" alt="">
             </div>
         </div>
 
@@ -15,7 +15,7 @@
                         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
                             aria-expanded="" aria-controls="collapseOne">
                             <div class="title  btn btn-danger btn-outline btn-lg">ABOUT
-                                {{currUsr.firstName?.toUpperCase()}}
+                                {{currUsr.firstName.toUpperCase()}}
                             </div>
                         </a>
                     </h4>
@@ -108,8 +108,7 @@
         </ng-container>
 
         <ng-template #loaded>
-            <h1 style="text-align: center;">{{userFriends?.length != 0? ('You can also see '+ currUsr.firstName+"'s
-                friends list before scrolling("+userFriends?.length+')'):(currUsr.firstName + "'s has no friends")}}
+            <h1 style="text-align: center;">{{userFriends.length != 0? ('You can also see '+ currUsr.firstName+"'s friends list before scrolling("+userFriends.length+')'):(currUsr.firstName + "'s has no friends")}}
             </h1>
             <div class="  row product-items " (scroll)="onScroll($event)">
                 <div class="   mt-5 mb-5 col-12 col-sm text-center" *ngFor="let friend of userFriends ">
@@ -121,7 +120,7 @@
                                 <h4 class=" name mt-3 ">{{friend.firstName}} {{friend.lastName}}</h4>
                                 <p class="information mt-3 text-justify"> {{friend.description}}</p>
 
-                                <button class="btn btn-primary follow" (click)="showUser(friend.id)">See
+                                <button type="button" class="btn btn-primary follow" (click)="showUser(friend.id)">See
                                     Profile</button>
 
                             </div>

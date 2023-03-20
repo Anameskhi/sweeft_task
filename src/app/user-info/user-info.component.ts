@@ -57,7 +57,7 @@ export class UserInfoComponent implements OnInit, OnDestroy {
       this.id = params['id'];
 
       this.getCurrentUser()
-      this.getUsersFriends()
+     
 
     })
   }
@@ -101,6 +101,8 @@ export class UserInfoComponent implements OnInit, OnDestroy {
       .subscribe(currentUsr => {
         console.log(currentUsr)
         this.currUsr = currentUsr
+     
+        this.getUsersFriends()
 
       })
   }
@@ -121,6 +123,7 @@ export class UserInfoComponent implements OnInit, OnDestroy {
 
   showUser(id: number) {
     this.router.navigate(['user-info', id])
+    this.userFriends = []
   }
 
   delete(id: number) {
