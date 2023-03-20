@@ -210,7 +210,6 @@
       "profilePic": "https://robohash.org/perferendisideveniet.png",
       "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
     }
-
   ],
   "friends": [
     {
@@ -534,7 +533,5 @@
       "description": "Text descriptions are primary content, and when images do not have a text description, anyone who cannot see the image will not know its purpose. This means people may be unable to access content or perform related tasks."
     }
   ],
-  "messages": [
-   
-  ]
+  "messages": []
 }
