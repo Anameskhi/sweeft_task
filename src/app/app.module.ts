@@ -13,10 +13,14 @@ import { MatButtonModule} from '@angular/material/button'
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { NgToastModule } from 'ng-angular-popup';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CreateUserComponent
    
   ],
   imports: [
@@ -32,7 +36,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatCardModule,
     MatButtonModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatToolbarModule,
+    NgToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,7 +5,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { IFriend } from '../core/interfaces/friend.interface';
 import { IUser } from '../core/interfaces/user.interface';
 import { UsersService } from '../core/services/users.service';
-
+import { NgToastService } from 'ng-angular-popup';
 @Component({
   selector: 'app-user-info',
   templateUrl: './user-info.component.html',
@@ -26,7 +26,8 @@ export class UserInfoComponent implements OnInit,OnDestroy {
     private activate: ActivatedRoute,
     private userService: UsersService,
     private activateRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private toastAlert: NgToastService
 
   ) { }
 
@@ -118,7 +119,8 @@ export class UserInfoComponent implements OnInit,OnDestroy {
   }
 
   delete(id: number){
-    this.userService.deleteUser(id).subscribe(friends=>{
+    this.userService.deleteUser(id).subscribe(users=>{
+      this.toastAlert.success({detail: "Success Message",summary:"User successfully deleted",duration:3000})
       this.router.navigate(['users'])
     })
    

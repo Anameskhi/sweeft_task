@@ -21,6 +21,10 @@ const routes: Routes = [
         path: 'user-info/:id',
         loadChildren: () => import('./user-info/user-info.module').then(m=> m.UserInfoModule)
       },
+      {
+        path: 'create-user',
+        loadChildren: () => import('./create-user/create-user.module').then(m=> m.CreateUserModule)
+      },
     ]
   }
 ];
